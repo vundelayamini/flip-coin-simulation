@@ -4,16 +4,14 @@ isHeads=1
 headCount=0
 tailCount=0
 
-for((count=1; count<=100; count++))  
+for((count=1; count<=4; count++))  
  do
-    if [ $headCountWin < 21 && $tailCount< 21 ]
-     then
-          flipCoin=$((RANDOM%2))
+       flipCoin=$((RANDOM%2))
          if [ $flipCoin -eq $isHeads ]
    then
-    headCount=$(($headCount++))
+    headCount=$(($headCount+1))
   else
-    tailCount=$(($tailCount++))
+    tailCount=$(($tailCount+1))
   fi
 done
 echo $headCount $tailCount
