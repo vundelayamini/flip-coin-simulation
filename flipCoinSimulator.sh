@@ -1,11 +1,17 @@
 #!/bin/bash -x
 
-flipCoin=$((RANDOM%2))
 isHeads=1
+headCount=0
+tailCount=0
 
-if [ $flipCoin -eq $isHeads ]
+for((count=1; count<=2; count++))  
+ do
+    flipCoin=$((RANDOM%2))
+     if [ $flipCoin -eq $isHeads ]
 then
-  echo  HEADS
+    headCount=$(($headCount+1))
 else
-     echo TAILS
+    tailCount=$(($tailCont+1))
 fi
+done
+echo $headCount $tailCount
